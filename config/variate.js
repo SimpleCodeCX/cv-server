@@ -1,0 +1,1 @@
+exports.MARIADBPWD = process.env.MARIADBPWD; // 数据库密码

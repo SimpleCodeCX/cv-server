@@ -1,0 +1,1 @@
+exports.skillCtl = require('./skill_controller');

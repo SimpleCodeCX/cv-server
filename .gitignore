@@ -1,0 +1,12 @@
+/node_modules/
+/.vscode-upload.json
+/package-lock.json
+/npm-debug.log
+/tools/handleExcel/node_modules/*
+/tools/handleExcel/data/*
+/tools/**
+/other
+/__bak/**
+/startShell/**
+start.cmd
+package-lock.json
