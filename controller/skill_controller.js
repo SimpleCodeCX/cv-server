@@ -115,9 +115,10 @@ async function deleteBySkillId(ctx) {
   return ctx.body = common.apiNormalResponseFormat({ isDeleteSuccess: true });
 }
 
-
-exports.getAll = getAll;
-exports.getBySkillId = getBySkillId;
-exports.postSkill = postSkill;
-exports.putSkill = putSkill;
-exports.deleteBySkillId = deleteBySkillId;
+module.exports = exports = {
+  getAll,
+  getBySkillId,
+  postSkill,
+  putSkill,
+  deleteBySkillId
+}
