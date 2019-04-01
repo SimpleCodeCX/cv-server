@@ -121,4 +121,5 @@ module.exports = exports = {
   postSkill,
   putSkill,
   deleteBySkillId
-}
+};
+
