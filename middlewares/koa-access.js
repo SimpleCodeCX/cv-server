@@ -1,6 +1,5 @@
-const isDev = /^dev/.test(process.env.npm_lifecycle_event);
 const logger = require('../lib').logger.logstash;
-
+const { GLOBAL_CONFIG } = require('../config/system.config');
 // 获取客户端ip
 const REGEX_IPV4 = /\d+\.\d+\.\d+\.\d+$/;
 function realip(ctx) {
@@ -42,7 +41,7 @@ module.exports = function (opts = {}) {
     const body = typeof ctx.body === 'string' && ctx.body.length > 200 ?
       'body is too large:' + ctx.body.toString().substr(0, 200) :
       ctx.body;
-    isDev ?
+    GLOBAL_CONFIG.isDev ?
       null :
       logger.mark(
         rid,

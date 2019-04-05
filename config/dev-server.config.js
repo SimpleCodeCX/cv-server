@@ -1,10 +1,11 @@
-const { MARIADBPWD } = require('./variate');
+const { DBHOST, DBUSER, DBPWD, DBDATABASE, LOGSTASHURL } = require('./variate');
 // 服务器开发版
 module.exports = {
   mariadb: {
-    host: '148.70.160.165',
-    user: 'admin',
-    password: MARIADBPWD,
-    database: 'blog'
-  }
+    host: DBHOST,
+    user: DBUSER,
+    password: DBPWD,
+    database: DBDATABASE
+  },
+  logstashUrl: LOGSTASHURL
 };

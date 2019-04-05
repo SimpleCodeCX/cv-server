@@ -5,30 +5,34 @@ function generateGlobalConfig() {
   let globalConfig = {
     mariadb: devConfig.mariadb,
     isDev: /^dev.*/.test(process.env.npm_lifecycle_event),
-    logstashUrl: '148.70.160.165'
+    logstashUrl: devConfig.logstashUrl
   };
   switch (process.env.npm_lifecycle_event) {
     case 'dev': {
       globalConfig = Object.assign(globalConfig, {
-        mariadb: devConfig.mariadb
+        mariadb: devConfig.mariadb,
+        logstashUrl: devConfig.logstashUrl
       });
       break;
     }
     case 'devServer': {
       globalConfig = Object.assign(globalConfig, {
-        mariadb: devServer.mariadb
+        mariadb: devServer.mariadb,
+        logstashUrl: devServer.logstashUrl
       });
       break;
     }
     case 'prod': {
       globalConfig = Object.assign(globalConfig, {
-        mariadb: prodConfig.mariadb
+        mariadb: prodConfig.mariadb,
+        logstashUrl: prodConfig.logstashUrl
       });
       break;
     }
     default: {
       globalConfig = Object.assign(globalConfig, {
-        mariadb: devConfig.mariadb
+        mariadb: devConfig.mariadb,
+        logstashUrl: devConfig.logstashUrl
       });
       break;
     }
