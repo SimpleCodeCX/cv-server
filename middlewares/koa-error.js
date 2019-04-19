@@ -1,7 +1,8 @@
 /**
  * 异常处理
  */
-const isDev = /^dev/.test(process.env.npm_lifecycle_event); // 开发环境
+const { GLOBAL_CONFIG } = require('../config/system.config');
+const isDev = GLOBAL_CONFIG.isDev;
 module.exports = async function (ctx, next) {
   try {
     await next();
